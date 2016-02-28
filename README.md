@@ -25,7 +25,7 @@ Full example:
 <h1 class="animated infinite bounce">Example</h1>
 ```
 
-[Check out all the animations here!](https://daneden.github.io/animate.scss/)
+[Check out all the animations here!](https://daneden.github.io/animate.css/)
 
 ##Usage
 To use animate.scss in your website, simply drop the stylesheet into your document's `<head>`, and add the class `animated` to an element, along with any of the animation names. That's it! You've got a CSS animated element. Super!
@@ -40,6 +40,7 @@ You can do a whole bunch of other stuff with animate.scss when you combine it wi
 
 ```javascript
 $('#yourElement').addClass('animate bounce-out-left');
+```
 ```
 
 You can also detect when an animation ends:
@@ -90,6 +91,7 @@ You can change the duration of your animations, add a delay or change the number
 #yourElement {
    @include fade-in-down(300ms, 2s, true, 'webkit');
 }
+```
 
 ## Custom Builds
 Animate.scss is powered by [grunt.js](http://gruntjs.com/), and you can create custom builds pretty easily. First of all, you’ll need Grunt and all other dependencies:
