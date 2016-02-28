@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Sassy-animate by chrismcclellan</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Sassy-animate</h1>
+      <h2 class="project-tagline">animate.css to animate.scss with some little bits of goodness</h2>
+      <a href="https://github.com/chrismcclellan/sassy-animate" class="btn">View on GitHub</a>
+      <a href="https://github.com/chrismcclellan/sassy-animate/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/chrismcclellan/sassy-animate/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="sassyanimate" class="anchor" href="#sassyanimate" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>SassyAnimate</h1>
+
+<p><em>Just-add-water CSS animation</em></p>
+
+<p><code>animate.scss</code> is a port of <code>animate.css</code>. It is a bunch of cool, fun, and cross-browser animations for you to use in your projects. Great for emphasis, home pages, sliders, and general just-add-water-awesomeness.</p>
+
+<h2>
+<a id="basic-usage" class="anchor" href="#basic-usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Basic Usage</h2>
+
+<ol>
+<li>
+<p>Include the stylesheet on your document's <code>&lt;head&gt;</code></p>
+
+<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">head</span>&gt;
+  &lt;<span class="pl-ent">link</span> <span class="pl-e">rel</span>=<span class="pl-s"><span class="pl-pds">"</span>stylesheet<span class="pl-pds">"</span></span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>/animate.min.css<span class="pl-pds">"</span></span>&gt;
+&lt;/<span class="pl-ent">head</span>&gt;</pre></div>
+</li>
+<li><p>Add the class <code>animated</code> to the element you want to animate.
+You may also want to include the class <code>infinite</code> for an infinite loop.</p></li>
+<li>
+<p>Finally you need to add one of the following classes:</p>
+
+<p><a href="https://github.com/chrismcclellan/sassy-animate/blob/master/class-list-slugified.txt">List of slugi-fied classes!</a></p>
+
+<p><a href="https://github.com/chrismcclellan/sassy-animate/blob/master/class-list-camelCased.txt">List of camelCased classes!</a></p>
+</li>
+</ol>
+
+<p>Full example:</p>
+
+<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">h1</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>animated infinite bounce<span class="pl-pds">"</span></span>&gt;Example&lt;/<span class="pl-ent">h1</span>&gt;</pre></div>
+
+<p><a href="https://daneden.github.io/animate.scss/">Check out all the animations here!</a></p>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>To use animate.scss in your website, simply drop the stylesheet into your document's <code>&lt;head&gt;</code>, and add the class <code>animated</code> to an element, along with any of the animation names. That's it! You've got a CSS animated element. Super!</p>
+
+<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">head</span>&gt;
+  &lt;<span class="pl-ent">link</span> <span class="pl-e">rel</span>=<span class="pl-s"><span class="pl-pds">"</span>stylesheet<span class="pl-pds">"</span></span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>animate.min.css<span class="pl-pds">"</span></span>&gt;
+&lt;/<span class="pl-ent">head</span>&gt;</pre></div>
+
+<p>You can do a whole bunch of other stuff with animate.scss when you combine it with jQuery or add your own CSS rules. Dynamically add animations using jQuery with ease:</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">'</span>#yourElement<span class="pl-pds">'</span></span>).<span class="pl-en">addClass</span>(<span class="pl-s"><span class="pl-pds">'</span>animate bounce-out-left<span class="pl-pds">'</span></span>);</pre></div>
+
+<p>You can also detect when an animation ends:</p>
+
+
+
+<div class="highlight highlight-source-js"><pre><span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">'</span>#yourElement<span class="pl-pds">'</span></span>).<span class="pl-en">one</span>(<span class="pl-s"><span class="pl-pds">'</span>webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend<span class="pl-pds">'</span></span>, doSomething);</pre></div>
+
+<p><a href="https://www.youtube.com/watch?v=CBQGl6zokMs">View a video tutorial</a> on how to use Animate.scss with jQuery here.</p>
+
+<p><strong>Note:</strong> <code>jQuery.one()</code> is used when you want to execute the event handler at most <em>once</em>. More information <a href="http://api.jquery.com/one/">here</a>.</p>
+
+<p>You can also extend jQuery to add a function that does it all for you:</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-smi">$</span>.<span class="pl-smi">fn</span>.<span class="pl-en">extend</span>({
+    <span class="pl-en">animateCss</span><span class="pl-k">:</span> <span class="pl-k">function</span> (<span class="pl-smi">animationName</span>) {
+        <span class="pl-k">var</span> animationEnd <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend<span class="pl-pds">'</span></span>;
+        <span class="pl-en">$</span>(<span class="pl-v">this</span>).<span class="pl-en">addClass</span>(<span class="pl-s"><span class="pl-pds">'</span>animated <span class="pl-pds">'</span></span> <span class="pl-k">+</span> animationName).<span class="pl-en">one</span>(animationEnd, <span class="pl-k">function</span>() {
+            <span class="pl-en">$</span>(<span class="pl-v">this</span>).<span class="pl-en">removeClass</span>(<span class="pl-s"><span class="pl-pds">'</span>animated <span class="pl-pds">'</span></span> <span class="pl-k">+</span> animationName);
+        });
+    }
+});</pre></div>
+
+<p>And use it like this:</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">'</span>#yourElement<span class="pl-pds">'</span></span>).<span class="pl-en">animateCss</span>(<span class="pl-s"><span class="pl-pds">'</span>bounce<span class="pl-pds">'</span></span>);</pre></div>
+
+<p>You can change the duration of your animations, add a delay or change the number of times that it plays:</p>
+
+<div class="highlight highlight-source-css"><pre><span class="pl-e">#yourElement</span> {
+  @<span class="pl-c1">include</span> <span class="pl-c1">bounce-in-<span class="pl-c1">down</span></span>($<span class="pl-c1"><span class="pl-c1">duration</span></span>:<span class="pl-c1">3<span class="pl-k">s</span></span>, $delay:<span class="pl-c1">2<span class="pl-k">s</span></span>, $infinite: true, <span class="pl-s"><span class="pl-pds">'</span>*<span class="pl-pds">'</span></span>);
+}</pre></div>
+
+<p><em>Note: be sure to replace "vendor" in the CSS with the applicable vendor prefixes (webkit, moz, etc)</em></p>
+
+<h2>
+<a id="custom-builds" class="anchor" href="#custom-builds" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Custom Builds</h2>
+
+<p>Animate.scss is powered by <a href="http://gruntjs.com/">grunt.js</a>, and you can create custom builds pretty easily. First of all, you’ll need Grunt and all other dependencies:</p>
+
+<div class="highlight highlight-source-shell"><pre>$ git clone git@github.com:chrismcclellan/sassy-animate.git
+$ <span class="pl-c1">cd</span> sassy-animate
+$ npm install</pre></div>
+
+<p>Next, run <code>grunt build</code> to compile your custom build. For example, if you want only some of the the classes, simply comment out the class declerations in /sassy-animate/src/_classes.scss</p>
+
+<div class="highlight highlight-source-scss"><pre><span class="pl-c">// .bounceInDown, .bounce-in-down { @include bounce-in-down(); }</span></pre></div>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
+
+<p>Animate.scss is licensed under the MIT license. (<a href="http://opensource.org/licenses/MIT">http://opensource.org/licenses/MIT</a>)</p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/chrismcclellan/sassy-animate">Sassy-animate</a> is maintained by <a href="https://github.com/chrismcclellan">chrismcclellan</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
