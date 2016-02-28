@@ -1,7 +1,8 @@
 
-@mixin rotate-out-up-right($duration:$duration-default, $delay:null, $infinite:null, $forwards:null) {
+@mixin rotate-out-up-right($duration:$duration-default, $delay:null, $infinite:null, $forwards:null, $config:()) {
 
     $name: 'rotate-out-up-right';
+    $config: extend("$#{$name}-config", $config);
 
     @each $vendor in $supported-vendor-prefixes {
 

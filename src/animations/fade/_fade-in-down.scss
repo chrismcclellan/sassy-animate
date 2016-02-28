@@ -1,7 +1,8 @@
 
-@mixin fade-in-down($duration:$duration-default, $delay:null, $infinite:null, $forwards:null) {
+@mixin fade-in-down($duration:$duration-default, $delay:null, $infinite:null, $forwards:null, $config:()) {
 
     $name: 'fade-in-down';
+    $config: extend("$#{$name}-config", $config);
 
     @each $vendor in $supported-vendor-prefixes {
 

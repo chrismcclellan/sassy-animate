@@ -1,7 +1,8 @@
 
-@mixin rotate-in-down-left($duration:$duration-default, $delay:null, $infinite:null, $forwards:null) {
+@mixin rotate-in-down-left($duration:$duration-default, $delay:null, $infinite:null, $forwards:null, $config:()) {
 
     $name: 'rotate-in-down-left';
+    $config: extend("$#{$name}-config", $config);
 
     @each $vendor in $supported-vendor-prefixes {
 

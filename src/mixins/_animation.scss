@@ -12,6 +12,7 @@
             $animations: #{$animations + nth($animate, $i)};
 
             @if $i < $max {
+
                 $animations: #{$animations + " "};
             }
         }

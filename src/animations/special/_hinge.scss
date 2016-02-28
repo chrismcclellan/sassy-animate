@@ -1,8 +1,9 @@
 
-@mixin hinge($duration:$duration-default, $delay:null, $infinite:null, $forwards:null) {
+@mixin hinge($duration:$duration-default, $delay:null, $infinite:null, $forwards:null, $config:()) {
 
     $name: 'hinge';
     $duration-hinge: 2s !default;
+    $config: extend("$#{$name}-config", $config);
 
     @each $vendor in $supported-vendor-prefixes {
 

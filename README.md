@@ -77,15 +77,19 @@ And use it like this:
 $('#yourElement').animateCss('bounce');
 ```
 
+## Using Mixins
+
 You can change the duration of your animations, add a delay or change the number of times that it plays:
 
-```css
-#yourElement {
-  @include bounce-in-down($duration:3s, $delay:2s, $infinite: true, '*');
-}
-```
+ + $duration: accepts #.#s or ###ms format
+ + $delay: accepts #.#s or ###ms format
+ + $infinite: accepts Boolean
+ + $vendor-prefix: accepts 'webkit', 'moz', 'ms', 'o', null, '*' (the * returns all vender prefixed rules)
 
-*Note: be sure to replace "vendor" in the CSS with the applicable vendor prefixes (webkit, moz, etc)*
+```scss
+#yourElement {
+   @include fade-in-down(300ms, 2s, true, 'webkit');
+}
 
 ## Custom Builds
 Animate.scss is powered by [grunt.js](http://gruntjs.com/), and you can create custom builds pretty easily. First of all, you’ll need Grunt and all other dependencies:
@@ -101,10 +105,6 @@ Next, run `grunt build` to compile your custom build. For example, if you want o
 ```scss
 .bounceInDown, .bounce-in-down { @include bounce-in-down(); }
 // .bounceInLeft, .bounce-in-left { @include bounce-in-left(); }
-// .bounceInRight, .bounce-in-right { @include bounce-in-right(); }
-.bounceInUp, .bounce-in-up { @include bounce-in-up(); }
-// .bounceIn, .bounce-in { @include bounce-in(); }
-[...]
 ```
 
 ## License

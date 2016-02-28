@@ -1,7 +1,8 @@
 
-@mixin rubber-band($duration:$duration-default, $delay:null, $infinite:null, $forwards:null) {
+@mixin rubber-band($duration:$duration-default, $delay:null, $infinite:null, $forwards:null, $config:()) {
 
     $name: 'rubber-band';
+    $config: extend("$#{$name}-config", $config);
 
     @each $vendor in $supported-vendor-prefixes {
 

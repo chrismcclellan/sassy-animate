@@ -1,7 +1,8 @@
 
-@mixin light-speed-out($duration:$duration-default, $delay:null, $infinite:null, $forwards:null) {
+@mixin light-speed-out($duration:$duration-default, $delay:null, $infinite:null, $forwards:null, $config:()) {
 
     $name: 'light-speed-out';
+    $config: extend("$#{$name}-config", $config);
 
     @each $vendor in $supported-vendor-prefixes {
 

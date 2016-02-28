@@ -1,7 +1,8 @@
 
-@mixin slide-out-down($duration:$duration-default, $delay:null, $infinite:null, $forwards:null) {
+@mixin slide-out-down($duration:$duration-default, $delay:null, $infinite:null, $forwards:null, $config:()) {
 
     $name: 'slide-out-down';
+    $config: extend("$#{$name}-config", $config);
 
     @each $vendor in $supported-vendor-prefixes {
 

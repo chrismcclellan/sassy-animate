@@ -9,8 +9,8 @@ module.exports = function(grunt) {
 
         scss: {
             options: { preserve_path: true },
-            files: ['src/scss/**/*'],
-            tasks: ['compass:build', 'cssmin:build']
+            files: ['src/**/*'],
+            tasks: ['compass:dist', 'cssmin:dist']
         }
     });
 

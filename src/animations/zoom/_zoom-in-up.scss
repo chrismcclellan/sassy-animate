@@ -1,7 +1,8 @@
 
-@mixin zoom-in-up($duration:$duration-default, $delay:null, $infinite:null, $forwards:null) {
+@mixin zoom-in-up($duration:$duration-default, $delay:null, $infinite:null, $forwards:null, $config:()) {
 
     $name: 'zoom-in-up';
+    $config: extend("$#{$name}-config", $config);
 
     @each $vendor in $supported-vendor-prefixes {
 

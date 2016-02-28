@@ -1,7 +1,8 @@
 
-@mixin slide-out-left($duration:$duration-default, $delay:null, $infinite:null, $forwards:null) {
+@mixin slide-out-left($duration:$duration-default, $delay:null, $infinite:null, $forwards:null, $config:()) {
 
     $name: 'slide-out-left';
+    $config: extend("$#{$name}-config", $config);
 
     @each $vendor in $supported-vendor-prefixes {
 

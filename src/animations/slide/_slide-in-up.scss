@@ -1,7 +1,8 @@
 
-@mixin slide-in-up($duration:$duration-default, $delay:null, $infinite:null, $forwards:null) {
+@mixin slide-in-up($duration:$duration-default, $delay:null, $infinite:null, $forwards:null, $config:()) {
 
     $name: 'slide-in-up';
+    $config: extend("$#{$name}-config", $config);
 
     @each $vendor in $supported-vendor-prefixes {
 

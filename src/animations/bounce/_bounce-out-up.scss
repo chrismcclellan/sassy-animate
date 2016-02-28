@@ -1,7 +1,8 @@
 
-@mixin bounce-out-up($duration:$duration-bounce-out, $delay:null, $infinite:null, $forwards:null) {
+@mixin bounce-out-up($duration:$duration-bounce-out, $delay:null, $infinite:null, $forwards:null, $config:()) {
 
     $name: 'bounce-out-up';
+    $config: extend("$#{$name}-config", $config);
 
     @each $vendor in $supported-vendor-prefixes {
 

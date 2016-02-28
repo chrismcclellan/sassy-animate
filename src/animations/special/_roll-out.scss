@@ -1,8 +1,9 @@
 // @mixin roll-out - originally authored by Nick Pettit - https://github.com/nickpettit */
 
-@mixin roll-out($duration:$duration-default, $delay:null, $infinite:null, $forwards:null) {
+@mixin roll-out($duration:$duration-default, $delay:null, $infinite:null, $forwards:null, $config:()) {
 
     $name: 'roll-out';
+    $config: extend("$#{$name}-config", $config);
 
     @each $vendor in $supported-vendor-prefixes {
 

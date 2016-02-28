@@ -1,8 +1,9 @@
 // @mixin pulse - originally authored by Nick Pettit - https://github.com/nickpettit/ */
 
-@mixin pulse($duration:$duration-default, $delay:null, $infinite:null, $forwards:null) {
+@mixin pulse($duration:$duration-default, $delay:null, $infinite:null, $forwards:null, $config:()) {
 
     $name: 'pulse';
+    $config: extend("$#{$name}-config", $config);
 
     @each $vendor in $supported-vendor-prefixes {
 

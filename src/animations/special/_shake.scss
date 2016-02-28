@@ -1,7 +1,8 @@
 
-@mixin shake($duration:$duration-default, $delay:null, $infinite:null, $forwards:null) {
+@mixin shake($duration:$duration-default, $delay:null, $infinite:null, $forwards:null, $config:()) {
 
     $name: 'shake';
+    $config: extend("$#{$name}-config", $config);
 
     @each $vendor in $supported-vendor-prefixes {
 

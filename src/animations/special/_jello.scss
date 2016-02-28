@@ -1,7 +1,8 @@
 
-@mixin jello($duration:$duration-default, $delay:null, $infinite:null, $forwards:null) {
+@mixin jello($duration:$duration-default, $delay:null, $infinite:null, $forwards:null, $config:()) {
 
     $name: 'jello';
+    $config: extend("$#{$name}-config", $config);
 
     @each $vendor in $supported-vendor-prefixes {
 

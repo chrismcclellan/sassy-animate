@@ -1,7 +1,8 @@
 
-@mixin flash($duration:$duration-default, $delay:null, $infinite:null, $forwards:null) {
+@mixin flash($duration:$duration-default, $delay:null, $infinite:null, $forwards:null, $config:()) {
 
     $name: 'flash';
+    $config: extend("$#{$name}-config", $config);
 
     @each $vendor in $supported-vendor-prefixes {
 

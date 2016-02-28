@@ -1,9 +1,8 @@
 
+@mixin fade-in-down-big($duration:$duration-default, $delay:null, $infinite:null, $forwards:null, $config:()) {
 
-$name: 'fade-in-down-big';
-
-
-@mixin fade-in-down-big($duration:$duration-default, $delay:null, $infinite:null, $forwards:null) {
+    $name: 'fade-in-down-big';
+    $config: extend("$#{$name}-config", $config);
 
     @each $vendor in $supported-vendor-prefixes {
 

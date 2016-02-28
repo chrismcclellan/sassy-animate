@@ -1,8 +1,9 @@
 
-@mixin flip-out-x($duration:$duration-default, $delay:null, $infinite:null, $forwards:null) {
+@mixin flip-out-x($duration:$duration-default, $delay:null, $infinite:null, $forwards:null, $config:()) {
 
     $name: 'flip-out-x';
     $duration-flip-out-x: .75s !default;
+    $config: extend("$#{$name}-config", $config);
 
     @each $vendor in $supported-vendor-prefixes {
 
