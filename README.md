@@ -99,7 +99,12 @@ $ npm install
 Next, run `grunt build` to compile your custom build. For example, if you want only some of the the classes, simply comment out the class declerations in /sassy-animate/src/_classes.scss
 
 ```scss
-// .bounceInDown, .bounce-in-down { @include bounce-in-down(); }
+.bounceInDown, .bounce-in-down { @include bounce-in-down(); }
+// .bounceInLeft, .bounce-in-left { @include bounce-in-left(); }
+// .bounceInRight, .bounce-in-right { @include bounce-in-right(); }
+.bounceInUp, .bounce-in-up { @include bounce-in-up(); }
+// .bounceIn, .bounce-in { @include bounce-in(); }
+[...]
 ```
 
 ## License
