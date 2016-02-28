@@ -1,0 +1,22 @@
+
+@mixin animation($animate...) {
+    $max: length($animate);
+    $animations: '';
+
+    @for $i from 1 through $max {
+
+        // @debug nth($animate, $i);
+
+        @if nth($animate, $i) {
+
+            $animations: #{$animations + nth($animate, $i)};
+
+            @if $i < $max {
+                $animations: #{$animations + " "};
+            }
+        }
+    }
+
+   // @include prefix(animation-fill-mode, both, '*');
+    @include prefix(animation, $animations, '*');
+}

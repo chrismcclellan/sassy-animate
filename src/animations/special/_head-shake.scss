@@ -1,0 +1,26 @@
+
+@mixin head-shake($duration:$duration-default, $delay:null, $infinite:null, $forwards:null) {
+
+    $name: 'head-shake';
+
+    @each $vendor in $supported-vendor-prefixes {
+
+        @include keyframes($name, $vendor) {
+
+            0%    { @include prefix(transform, translateX(0), $vendor); }
+
+            6.5%  { @include prefix(transform, translateX(-6px) rotateY(-9deg), $vendor); }
+
+            18.5% { @include prefix(transform, translateX(5px) rotateY(7deg), $vendor); }
+
+            31.5% { @include prefix(transform, translateX(-3px) rotateY(-5deg), $vendor); }
+
+            43.5% { @include prefix(transform, translateX(2px) rotateY(3deg), $vendor); }
+
+            50%   { @include prefix(transform, translateX(0), $vendor); }
+        }
+    }
+
+    @include animation($name, $duration, $delay, $infinite, $forwards);
+    @include prefix(animation-timing-function, ease-in-out, '*');
+}

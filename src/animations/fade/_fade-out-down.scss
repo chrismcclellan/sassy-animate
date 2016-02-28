@@ -1,0 +1,17 @@
+
+@mixin fade-out-down($duration:$duration-default, $delay:null, $infinite:null, $forwards:null) {
+
+    $name: 'fade-out-down';
+
+    @each $vendor in $supported-vendor-prefixes {
+
+        @include keyframes($name, $vendor) {
+
+            0% { opacity: 1; }
+
+            100% { @include prefix(transform, translate3d(0, 100%, 0), $vendor); opacity: 0; }
+        }
+    }
+
+    @include animation($name, $duration, $delay, $infinite, $forwards);
+}

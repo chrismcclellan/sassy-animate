@@ -1,0 +1,24 @@
+
+@mixin zoom-out-down($duration:$duration-default, $delay:null, $infinite:null, $forwards:null) {
+
+    $name: 'zoom-out-down';
+
+    @each $vendor in $supported-vendor-prefixes {
+
+        @include keyframes($name, $vendor) {
+
+            40% { opacity: 1;
+                @include prefix(transform, scale3d(.475, .475, .475) translate3d(0, -60px, 0), $vendor);
+                @include prefix( animation-timing-function, cubic-bezier(0.550, 0.055, 0.675, 0.190), $vendor);
+            }
+
+            100% { opacity: 0;
+                @include prefix(transform, scale3d(.1, .1, .1) translate3d(0, 2000px, 0), $vendor);
+                @include prefix(transform-origin, center bottom, $vendor);
+                @include prefix( animation-timing-function, cubic-bezier(0.175, 0.885, 0.320, 1), $vendor);
+            }
+        }
+    }
+
+    @include animation($name, $duration, $delay, $infinite, $forwards);
+}

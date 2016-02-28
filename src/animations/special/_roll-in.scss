@@ -1,0 +1,18 @@
+// @mixin - roll-in - originally authored by Nick Pettit - https://github.com/nickpettit/glide */
+
+@mixin roll-in($duration:$duration-default, $delay:null, $infinite:null, $forwards:null) {
+
+    $name: 'roll-in';
+
+    @each $vendor in $supported-vendor-prefixes {
+
+        @include keyframes($name, $vendor) {
+
+            0%   { @include prefix(transform, translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -120deg), $vendor); opacity: 0; }
+
+            100% { @include prefix(transform, none, $vendor); opacity: 1; }
+        }
+    }
+
+    @include animation($name, $duration, $delay, $infinite, $forwards);
+}

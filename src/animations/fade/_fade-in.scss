@@ -1,0 +1,17 @@
+
+@mixin fade-in($duration:$duration-default, $delay:null, $infinite:null, $forwards:null) {
+
+    $name: 'fade-in';
+
+    @each $vendor in $supported-vendor-prefixes {
+
+        @include keyframes($name, $vendor) {
+
+            0%   { opacity: 0; }
+
+            100% { opacity: 1; }
+        }
+    }
+
+    @include animation($name, $duration, $delay, $infinite, $forwards);
+}

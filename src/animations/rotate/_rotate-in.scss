@@ -1,0 +1,24 @@
+
+@mixin rotate-in($duration:$duration-default, $delay:null, $infinite:null, $forwards:null) {
+
+    $name: 'rotate-in';
+
+    @each $vendor in $supported-vendor-prefixes {
+
+        @include keyframes($name, $vendor) {
+
+            0% { opacity: 0;
+                @include prefix(transform-origin, center, $vendor);
+                @include prefix(transform, rotate3d(0, 0, 1, -200deg), $vendor);
+            }
+
+            100% { opacity: 1;
+                @include prefix(transform-origin, center, $vendor);
+                @include prefix(transform, none, $vendor);
+            }
+        }
+    }
+
+    @include animation($name, $duration, $delay, $infinite, $forwards);
+}
+

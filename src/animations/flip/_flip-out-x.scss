@@ -1,0 +1,21 @@
+
+@mixin flip-out-x($duration:$duration-default, $delay:null, $infinite:null, $forwards:null) {
+
+    $name: 'flip-out-x';
+    $duration-flip-out-x: .75s !default;
+
+    @each $vendor in $supported-vendor-prefixes {
+
+        @include keyframes($name, $vendor) {
+
+            0%   { @include prefix(transform, perspective(400px), $vendor); }
+
+            30%  { @include prefix(transform, perspective(400px) rotate3d(1, 0, 0, -20deg), $vendor); opacity: 1; }
+
+            100% { @include prefix(transform, perspective(400px) rotate3d(1, 0, 0, 90deg), $vendor); opacity: 0; }
+        }
+    }
+
+    @include animation($name, $duration, $delay, $infinite, $forwards);
+    @include prefix(backface-visibility, visible !important, '*');
+}

@@ -1,0 +1,17 @@
+
+@mixin bounce-out-left($duration:$duration-bounce-out, $delay:null, $infinite:null, $forwards:null) {
+
+    $name: 'bounce-out-left';
+
+    @each $vendor in $supported-vendor-prefixes {
+
+        @include keyframes($name, $vendor) {
+
+            20% { @include prefix(transform, translate3d(20px, 0, 0), $vendor); opacity: 1; }
+
+            100% { @include prefix(transform, translate3d(-2000px, 0, 0), $vendor); opacity: 0; }
+        }
+    }
+
+    @include animation($name, $duration, $delay, $infinite, $forwards);
+}

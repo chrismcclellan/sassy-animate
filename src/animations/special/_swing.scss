@@ -1,0 +1,24 @@
+
+@mixin swing($duration:$duration-default, $delay:null, $infinite:null, $forwards:null) {
+
+    $name: 'swing';
+
+    @each $vendor in $supported-vendor-prefixes {
+
+        @include keyframes($name, $vendor) {
+
+            20%  { @include prefix(transform, rotate3d(0, 0, 1, 15deg), $vendor); }
+
+            40%  { @include prefix(transform, rotate3d(0, 0, 1, -10deg), $vendor); }
+
+            60%  { @include prefix(transform, rotate3d(0, 0, 1, 5deg), $vendor); }
+
+            80%  { @include prefix(transform, rotate3d(0, 0, 1, -5deg), $vendor); }
+
+            100% { @include prefix(transform, rotate3d(0, 0, 1, 0deg), $vendor); }
+        }
+    }
+
+    @include animation($name, $duration, $delay, $infinite, $forwards);
+    @include prefix(transform-origin, top center, '*');
+}

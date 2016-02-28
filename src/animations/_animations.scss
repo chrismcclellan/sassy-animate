@@ -1,0 +1,91 @@
+
+//
+//  Main animation import!
+//  You can leave this uncommented because
+//  Nothing here will bloat your built css
+//  Unless of course you use a mixin or two :)
+//
+
+@import "bounce/bounce-in-down";
+@import "bounce/bounce-in-left";
+@import "bounce/bounce-in-right";
+@import "bounce/bounce-in-up";
+@import "bounce/bounce-in";
+@import "bounce/bounce-out-down";
+@import "bounce/bounce-out-left";
+@import "bounce/bounce-out-right";
+@import "bounce/bounce-out-up";
+@import "bounce/bounce-out";
+@import "bounce/bounce";
+
+@import "fade/fade-in-down-big";
+@import "fade/fade-in-down";
+@import "fade/fade-in-left-big";
+@import "fade/fade-in-left";
+@import "fade/fade-in-right-big";
+@import "fade/fade-in-right";
+@import "fade/fade-in-up-big";
+@import "fade/fade-in-up";
+@import "fade/fade-in";
+@import "fade/fade-out-down-big";
+@import "fade/fade-out-down";
+@import "fade/fade-out-left-big";
+@import "fade/fade-out-left";
+@import "fade/fade-out-right-big";
+@import "fade/fade-out-right";
+@import "fade/fade-out-up-big";
+@import "fade/fade-out-up";
+@import "fade/fade-out";
+
+@import "flip/flip-in-x";
+@import "flip/flip-in-y";
+@import "flip/flip-out-x";
+@import "flip/flip-out-y";
+@import "flip/flip";
+
+@import "light-speed/light-speed-in";
+@import "light-speed/light-speed-out";
+
+@import "rotate/rotate-in-down-left";
+@import "rotate/rotate-in-down-right";
+@import "rotate/rotate-in-up-left";
+@import "rotate/rotate-in-up-right";
+@import "rotate/rotate-in";
+@import "rotate/rotate-out-down-left";
+@import "rotate/rotate-out-down-right";
+@import "rotate/rotate-out-up-left";
+@import "rotate/rotate-out-up-right";
+@import "rotate/rotate-out";
+
+@import "slide/slide-in-down";
+@import "slide/slide-in-left";
+@import "slide/slide-in-right";
+@import "slide/slide-in-up";
+@import "slide/slide-out-down";
+@import "slide/slide-out-left";
+@import "slide/slide-out-right";
+@import "slide/slide-out-up";
+
+@import "special/flash";
+@import "special/head-shake";
+@import "special/hinge";
+@import "special/jello";
+@import "special/pulse";
+@import "special/roll-in";
+@import "special/roll-out";
+@import "special/rubber-band";
+@import "special/shake";
+@import "special/swing";
+@import "special/tada";
+@import "special/wobble";
+
+@import "zoom/zoom-in-down";
+@import "zoom/zoom-in-left";
+@import "zoom/zoom-in-right";
+@import "zoom/zoom-in-up";
+@import "zoom/zoom-in";
+@import "zoom/zoom-out-down";
+@import "zoom/zoom-out-left";
+@import "zoom/zoom-out-right";
+@import "zoom/zoom-out-up";
+@import "zoom/zoom-out";

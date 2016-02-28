@@ -1,0 +1,34 @@
+/*
+ *
+ *  Helper classes / selectors
+ *
+ *  Syntax
+ *  @include mixin($rule, $definition, $prefix);
+ *
+ *  Example
+ *  @include prefix(transform, scaleY(10%), webkit);
+ *
+ */
+
+$supported-vendor-prefixes: ("webkit", "moz", "ms", "o", false) !default;
+
+
+@mixin prefix($rule, $definition:'none', $prefix:null) {
+
+    @if $prefix == '*' {
+
+        // Output all vendor prefixed rules (yay recursively)
+        @each $vendor in $supported-vendor-prefixes {
+            @include prefix($rule, $definition, $vendor);
+        }
+
+    } @else if ($prefix) {
+        $prefixed: "-#{$prefix}-#{$rule}";
+        #{$prefixed}: $definition;
+
+    } @else {
+        #{$rule}: $definition;
+    }
+
+
+}

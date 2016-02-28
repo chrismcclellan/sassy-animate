@@ -1,0 +1,27 @@
+
+@mixin bounce-in($duration:$duration-bounce-in, $delay:null, $infinite:null, $forwards:null) {
+
+    $name: 'bounce-in';
+
+    @each $vendor in $supported-vendor-prefixes {
+
+        @include keyframes($name, $vendor) {
+
+            0%, 20%, 40%, 60%, 80%, 100% { @include prefix(animation-timing-function, cubic-bezier(0.215, 0.610, 0.355, 1.000), $vendor); }
+
+            0%   { @include prefix(transform, scale3d(.3, .3, .3), $vendor); opacity: 0; }
+
+            20%  { @include prefix(transform, scale3d(1.1, 1.1, 1.1), $vendor); }
+
+            40%  { @include prefix(transform, scale3d(.9, .9, .9), $vendor); }
+
+            60%  { @include prefix(transform, scale3d(1.03, 1.03, 1.03), $vendor); opacity: 1; }
+
+            80%  { @include prefix(transform, scale3d(.97, .97, .97), $vendor); }
+
+            100% { @include prefix(transform, scale3d(1, 1, 1), $vendor); opacity: 1; }
+        }
+    }
+
+    @include animation($name, $duration, $delay, $infinite, $forwards);
+}

@@ -1,0 +1,35 @@
+
+@mixin hinge($duration:$duration-default, $delay:null, $infinite:null, $forwards:null) {
+
+    $name: 'hinge';
+    $duration-hinge: 2s !default;
+
+    @each $vendor in $supported-vendor-prefixes {
+
+        @include keyframes($name, $vendor) {
+
+            0% {
+                @include prefix(transform-origin, top left, $vendor);
+                @include prefix( animation-timing-function, ease-in-out, $vendor);
+            }
+
+            20%, 60% {
+                @include prefix(transform, rotate3d(0, 0, 1, 80deg), $vendor);
+                @include prefix(transform-origin, top left, $vendor);
+                @include prefix( animation-timing-function, ease-in-out, $vendor);
+            }
+
+            40%, 80% { opacity: 1;
+                @include prefix(transform, rotate3d(0, 0, 1, 60deg), $vendor);
+                @include prefix(transform-origin, top left, $vendor);
+                @include prefix(animation-timing-function, ease-in-out, $vendor);
+            }
+
+            100% { opacity: 1;
+                @include prefix(transform, translate3d(0, 700px, 0), $vendor);
+            }
+        }
+    }
+
+    @include animation($name, $duration, $delay, $infinite, $forwards);
+}

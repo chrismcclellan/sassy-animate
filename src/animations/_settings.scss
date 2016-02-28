@@ -1,0 +1,12 @@
+
+$duration-default: 1s !default;
+
+$duration-flip-out-x: .75s !default;
+$duration-flip-out-y: .75s !default;
+
+$duration-bounce-in: .75s !default;
+$duration-bounce-out: .75s !default;
+
+$duration-hinge: 2s !default;
+
+$supported-vendor-prefixes: ("webkit", "moz", "ms", "o", false) !default;

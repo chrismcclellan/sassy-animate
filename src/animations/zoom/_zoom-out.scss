@@ -1,0 +1,19 @@
+
+@mixin zoom-out($duration:$duration-default, $delay:null, $infinite:null, $forwards:null) {
+
+    $name: 'zoom-out';
+
+    @each $vendor in $supported-vendor-prefixes {
+
+        @include keyframes($name, $vendor) {
+
+            0% { opacity: 1; }
+
+            50% { opacity: 0; @include prefix(transform, scale3d(.3, .3, .3), $vendor); }
+
+            100% { opacity: 0; }
+        }
+    }
+
+    @include animation($name, $duration, $delay, $infinite, $forwards);
+}

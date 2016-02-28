@@ -1,0 +1,28 @@
+// @mixin wobble - originally authored by Nick Pettit - https://github.com/nickpettit */
+
+@mixin wobble($duration:$duration-default, $delay:null, $infinite:null, $forwards:null) {
+
+    $name: 'wobble';
+
+    @each $vendor in $supported-vendor-prefixes {
+
+        @include keyframes($name, $vendor) {
+
+            0%   { @include prefix(transform, none, $vendor); }
+
+            15%  { @include prefix(transform, translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg), $vendor); }
+
+            30%  { @include prefix(transform, translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg), $vendor); }
+
+            45%  { @include prefix(transform, translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg), $vendor); }
+
+            60%  { @include prefix(transform, translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg), $vendor); }
+
+            75%  { @include prefix(transform, translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg), $vendor); }
+
+            100% { @include prefix(transform, none, $vendor); }
+        }
+    }
+
+    @include animation($name, $duration, $delay, $infinite, $forwards);
+}

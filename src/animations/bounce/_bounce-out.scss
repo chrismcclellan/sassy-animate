@@ -1,0 +1,19 @@
+
+@mixin bounce-out($duration:$duration-bounce-out, $delay:null, $infinite:null, $forwards:null) {
+
+    $name: 'bounce-out';
+
+    @each $vendor in $supported-vendor-prefixes {
+
+        @include keyframes($name, $vendor) {
+
+            20%      { @include prefix(transform, scale3d(.9, .9, .9), $vendor); }
+
+            50%, 55% { @include prefix(transform, scale3d(1.1, 1.1, 1.1), $vendor); opacity: 1; }
+
+            100%     { @include prefix(transform, scale3d(.3, .3, .3), $vendor); opacity: 0; }
+        }
+    }
+
+    @include animation($name, $duration, $delay, $infinite, $forwards);
+}

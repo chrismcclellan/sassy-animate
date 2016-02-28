@@ -1,0 +1,10 @@
+@import "custom-settings";
+@import "animations/settings";
+@import "mixins/main";
+@import "animations/animations";
+
+// Optional used to build css. Using the mixins is optimal.
+// If you comment or remove any imports in _animations.scss
+// Be sure _classes.scss isn't calling the mixin defined beyond
+// your commented or removed animations mixin call
+@import "classes";

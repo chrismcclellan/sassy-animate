@@ -1,0 +1,14 @@
+
+@mixin keyframes($animation_name, $prefix:null) {
+    @if $prefix == 'webkit' {
+        @-webkit-keyframes #{$animation_name} { @content; }
+    } @else if $prefix == 'moz' {
+        @-moz-keyframes #{$animation_name} { @content; }
+    } @else if $prefix == 'ms' {
+        @-ms-keyframes #{$animation_name} { @content; }
+    } @else if $prefix == 'o' {
+        @-o-keyframes #{$animation_name} { @content; }
+    } @else {
+        @keyframes #{$animation_name} { @content; }
+    }
+}

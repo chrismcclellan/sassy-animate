@@ -1,0 +1,39 @@
+
+@mixin flip($duration:$duration-default, $delay:null, $infinite:null, $forwards:null) {
+
+    $name: 'flip';
+
+    @each $vendor in $supported-vendor-prefixes {
+
+        @include keyframes($name, $vendor) {
+
+            0% {
+                @include prefix(transform, perspective(400px) rotate3d(0, 1, 0, -360deg), $vendor);
+                @include prefix( animation-timing-function, ease-out, $vendor);
+            }
+
+            40% {
+                @include prefix(transform, perspective(400px) translate3d(0, 0, 150px) rotate3d(0, 1, 0, -190deg), $vendor);
+                @include prefix( animation-timing-function, ease-out, $vendor);
+            }
+
+            50% {
+                @include prefix(transform, perspective(400px) translate3d(0, 0, 150px) rotate3d(0, 1, 0, -170deg), $vendor);
+                @include prefix( animation-timing-function, ease-in, $vendor);
+            }
+
+            80% {
+                @include prefix(transform, perspective(400px) scale3d(.95, .95, .95), $vendor);
+                @include prefix( animation-timing-function, ease-in, $vendor);
+            }
+
+            100% {
+                @include prefix(transform, perspective(400px), $vendor);
+                @include prefix( animation-timing-function, ease-in, $vendor);
+            }
+        }
+    }
+
+    @include animation($name, $duration, $delay, $infinite, $forwards);
+    @include prefix(backface-visibility, visible, '*');
+}

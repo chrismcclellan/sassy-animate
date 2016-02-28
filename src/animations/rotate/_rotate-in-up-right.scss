@@ -1,0 +1,23 @@
+
+@mixin rotate-in-up-right($duration:$duration-default, $delay:null, $infinite:null, $forwards:null) {
+
+    $name: 'rotate-in-up-right';
+
+    @each $vendor in $supported-vendor-prefixes {
+
+        @include keyframes($name, $vendor) {
+
+            0% { opacity: 0;
+                @include prefix(transform-origin, right bottom, $vendor);
+                @include prefix(transform, rotate3d(0, 0, 1, -90deg), $vendor);
+            }
+
+            100% { opacity: 1;
+                @include prefix(transform-origin, right bottom, $vendor);
+                @include prefix(transform, none, $vendor);
+            }
+        }
+    }
+
+    @include animation($name, $duration, $delay, $infinite, $forwards);
+}

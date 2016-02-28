@@ -1,0 +1,30 @@
+
+@mixin jello($duration:$duration-default, $delay:null, $infinite:null, $forwards:null) {
+
+    $name: 'jello';
+
+    @each $vendor in $supported-vendor-prefixes {
+
+        @include keyframes($name, $vendor) {
+
+            0%, 11.1%, 100% { @include prefix(transform, none); }
+
+            22.2% { @include prefix(transform, skewX(-12.5deg) skewY(-12.5deg), $vendor); }
+
+            33.3% { @include prefix(transform, skewX(6.25deg) skewY(6.25deg), $vendor); }
+
+            44.4% { @include prefix(transform, skewX(-3.125deg) skewY(-3.125deg), $vendor); }
+
+            55.5% { @include prefix(transform, skewX(1.5625deg) skewY(1.5625deg), $vendor); }
+
+            66.6% { @include prefix(transform, skewX(-0.78125deg) skewY(-0.78125deg), $vendor); }
+
+            77.7% { @include prefix(transform, skewX(0.390625deg) skewY(0.390625deg), $vendor); }
+
+            88.8% { @include prefix(transform, skewX(-0.1953125deg) skewY(-0.1953125deg), $vendor); }
+        }
+    }
+
+    @include animation($name, $duration, $delay, $infinite, $forwards);
+    @include prefix(transform-origin, center, '*');
+}

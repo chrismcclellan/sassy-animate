@@ -1,0 +1,19 @@
+
+@mixin shake($duration:$duration-default, $delay:null, $infinite:null, $forwards:null) {
+
+    $name: 'shake';
+
+    @each $vendor in $supported-vendor-prefixes {
+
+        @include keyframes($name, $vendor) {
+
+            0%, 100% { @include prefix(transform, translate3d(0, 0, 0), $vendor); }
+
+            10%, 30%, 50%, 70%, 90% { @include prefix(transform, translate3d(-10px, 0, 0), $vendor); }
+
+            20%, 40%, 60%, 80% { @include prefix(transform, translate3d(10px, 0, 0), $vendor); }
+        }
+    }
+
+    @include animation($name, $duration, $delay, $infinite, $forwards);
+}

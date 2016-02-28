@@ -1,0 +1,20 @@
+
+@mixin rotate-out-up-left($duration:$duration-default, $delay:null, $infinite:null, $forwards:null) {
+
+    $name: 'rotate-out-up-left';
+
+    @each $vendor in $supported-vendor-prefixes {
+
+        @include keyframes($name, $vendor) {
+
+            0% { opacity: 1; @include prefix(transform-origin, left bottom, $vendor); }
+
+            100% { opacity: 0;
+                @include prefix(transform-origin, left bottom, $vendor);
+                @include prefix(transform, rotate3d(0, 0, 1, -45deg), $vendor);
+            }
+        }
+    }
+
+    @include animation($name, $duration, $delay, $infinite, $forwards);
+}

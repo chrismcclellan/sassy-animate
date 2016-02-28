@@ -1,0 +1,22 @@
+
+@mixin zoom-out-left($duration:$duration-default, $delay:null, $infinite:null, $forwards:null) {
+
+    $name: 'zoom-out-left';
+
+    @each $vendor in $supported-vendor-prefixes {
+
+        @include keyframes($name, $vendor) {
+
+            40% { opacity: 1;
+                @include prefix(transform, scale3d(.475, .475, .475) translate3d(42px, 0, 0), $vendor);
+            }
+
+            100% { opacity: 0;
+                @include prefix(transform, scale(.1) translate3d(-2000px, 0, 0), $vendor);
+                @include prefix(transform-origin, left center, $vendor);
+            }
+        }
+    }
+
+    @include animation($name, $duration, $delay, $infinite, $forwards);
+}

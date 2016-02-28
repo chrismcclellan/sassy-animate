@@ -1,0 +1,17 @@
+
+@mixin slide-in-down($duration:$duration-default, $delay:null, $infinite:null, $forwards:null) {
+
+    $name: 'slide-in-down';
+
+    @each $vendor in $supported-vendor-prefixes {
+
+        @include keyframes($name, $vendor) {
+
+            0%   { @include prefix(transform, translate3d(0, -100%, 0), $vendor); visibility: visible; }
+
+            100% { @include prefix(transform, translate3d(0, 0, 0), $vendor); }
+        }
+    }
+
+    @include animation($name, $duration, $delay, $infinite, $forwards);
+}

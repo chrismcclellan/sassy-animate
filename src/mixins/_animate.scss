@@ -1,0 +1,8 @@
+
+@mixin animate() {
+    @include prefix(animation-fill-mode, both, '*');
+}
+
+@mixin infinite() {
+    @include prefix(animation-iteration-count, infinite, '*');
+}

@@ -1,0 +1,99 @@
+//
+//
+//  Helper classes / selectors
+//
+//  Syntax
+//  @include mixin($duration, $delay, $infinite, $forwards);
+//
+//  Example
+//  @include bounce-in-down(300ms, 900s, true, false);
+//
+//
+
+.animate,
+.animated { @include animate(); }
+
+.infinite { @include infinite(); }
+
+.bounceInDown, .bounce-in-down { @include bounce-in-down(); }
+.bounceInLeft, .bounce-in-left { @include bounce-in-left(); }
+.bounceInRight, .bounce-in-right { @include bounce-in-right(); }
+.bounceInUp, .bounce-in-up { @include bounce-in-up(); }
+.bounceIn, .bounce-in { @include bounce-in(); }
+.bounceOutDown, .bounce-out-down { @include bounce-out-down(); }
+.bounceOutLeft, .bounce-out-left { @include bounce-out-left(); }
+.bounceOutRight, .bounce-out-right { @include bounce-out-right(); }
+.bounceOutUp, .bounce-out-up { @include bounce-out-up(); }
+.bounceOut, .bounce-out { @include bounce-out(); }
+.bounce, .bounce { @include bounce(); }
+
+.fadeInDownBig, .fade-in-down-big { @include fade-in-down-big(); }
+.fadeInDown, .fade-in-down { @include fade-in-down(); }
+.fadeInLeftBig, .fade-in-left-big { @include fade-in-left-big(); }
+.fadeInLeft, .fade-in-left { @include fade-in-left(); }
+.fadeInRightBig, .fade-in-right-big { @include fade-in-right-big(); }
+.fadeInRight, .fade-in-right { @include fade-in-right(); }
+.fadeInUpBig, .fade-in-up-big { @include fade-in-up-big(); }
+.fadeInUp, .fade-in-up { @include fade-in-up(); }
+.fadeIn, .fade-in { @include fade-in(); }
+.fadeOutDownBig, .fade-out-down-big { @include fade-out-down-big(); }
+.fadeOutDown, .fade-out-down { @include fade-out-down(); }
+.fadeOutLeftBig, .fade-out-left-big { @include fade-out-left-big(); }
+.fadeOutLeft, .fade-out-left { @include fade-out-left(); }
+.fadeOutRightBig, .fade-out-right-big { @include fade-out-right-big(); }
+.fadeOutRight, .fade-out-right { @include fade-out-right(); }
+.fadeOutUpBig, .fade-out-up-big { @include fade-out-up-big(); }
+.fadeOutUp, .fade-out-up { @include fade-out-up(); }
+.fadeOut, .fade-out { @include fade-out(); }
+
+.flipInX, .flip-in-x { @include flip-in-x(); }
+.flipInY, .flip-in-y { @include flip-in-y(); }
+.flipOutX, .flip-out-x { @include flip-out-x(); }
+.flipOutY, .flip-out-y { @include flip-out-y(); }
+.flip { @include flip(); }
+
+.lightSpeedIn, .light-speed-in { @include light-speed-in(); }
+.lightSpeedOut, .light-speed-out { @include light-speed-out(); }
+.rotateInDownLeft, .rotate-in-down-left { @include rotate-in-down-left(); }
+.rotateInDownRight, .rotate-in-down-right { @include rotate-in-down-right(); }
+.rotateInUpLeft, .rotate-in-up-left { @include rotate-in-up-left(); }
+.rotateInUpRight, .rotate-in-up-right { @include rotate-in-up-right(); }
+.rotateIn, .rotate-in { @include rotate-in(); }
+.rotateOutDownLeft, .rotate-out-down-left { @include rotate-out-down-left(); }
+.rotateOutDownRight, .rotate-out-down-right { @include rotate-out-down-right(); }
+.rotateOutUpLeft, .rotate-out-up-left { @include rotate-out-up-left(); }
+.rotateOutUpRight, .rotate-out-up-right { @include rotate-out-up-right(); }
+.rotateOut, .rotate-out { @include rotate-out(); }
+
+.slideInDown { @include slide-in-down(); }
+.slideInLeft { @include slide-in-left(); }
+.slideInRight { @include slide-in-right(); }
+.slideInUp { @include slide-in-up(); }
+.slideOutDown { @include slide-out-down(); }
+.slideOutLeft { @include slide-out-left(); }
+.slideOutRight { @include slide-out-right(); }
+.slideOutUp { @include slide-out-up(); }
+
+.flash { @include flash(); }
+.headShake, .head-shake { @include head-shake(); }
+.hinge { @include hinge(); }
+.jello { @include jello(); }
+.pulse { @include pulse(); }
+.rollIn, .roll-in { @include roll-in(); }
+.rollOut, .roll-out { @include roll-out(); }
+.rubberBand, .rubber-band { @include rubber-band(); }
+.shake { @include shake(); }
+.swing { @include swing(); }
+.tada { @include tada(); }
+.wobble { @include wobble(); }
+
+.zoomInDown, .zoom-in-down { @include zoom-in-down(); }
+.zoomInLeft, .zoom-in-left { @include zoom-in-left(); }
+.zoomInRight, .zoom-in-right { @include zoom-in-right(); }
+.zoomInUp, .zoom-in-up { @include zoom-in-up(); }
+.zoomIn, .zoom-in { @include zoom-in(); }
+.zoomOutDown, .zoom-out-down { @include zoom-out-down(); }
+.zoomOutLeft, .zoom-out-left { @include zoom-out-left(); }
+.zoomOutRight, .zoom-out-right { @include zoom-out-right(); }
+.zoomOutUp, .zoom-out-up { @include zoom-out-up(); }
+.zoomOut, .zoom-out { @include zoom-out(); }

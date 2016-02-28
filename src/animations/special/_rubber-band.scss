@@ -1,0 +1,27 @@
+
+@mixin rubber-band($duration:$duration-default, $delay:null, $infinite:null, $forwards:null) {
+
+    $name: 'rubber-band';
+
+    @each $vendor in $supported-vendor-prefixes {
+
+        @include keyframes($name, $vendor) {
+
+            0%   { @include prefix(transform, scale3d(1, 1, 1), $vendor); }
+
+            30%  { @include prefix(transform, scale3d(1.25, 0.75, 1), $vendor); }
+
+            40%  { @include prefix(transform, scale3d(0.75, 1.25, 1), $vendor); }
+
+            50%  { @include prefix(transform, scale3d(1.15, 0.85, 1), $vendor); }
+
+            65%  { @include prefix(transform, scale3d(.95, 1.05, 1), $vendor); }
+
+            75%  { @include prefix(transform, scale3d(1.05, .95, 1), $vendor); }
+
+            100% { @include prefix(transform, scale3d(1, 1, 1), $vendor); }
+        }
+    }
+
+    @include animation($name, $duration, $delay, $infinite, $forwards);
+}
