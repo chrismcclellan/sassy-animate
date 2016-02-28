@@ -33,7 +33,7 @@
 
 <p><em>Just-add-water CSS animation</em></p>
 
-<p><code>animate.scss</code> is a port of <code>animate.css</code>. It is a bunch of cool, fun, and cross-browser animations for you to use in your projects. Great for emphasis, home pages, sliders, and general just-add-water-awesomeness.</p>
+<p><code>animate.scss</code> is a bunch of cool, fun, and cross-browser animations for you to use in your projects. Great for emphasis, home pages, sliders, and general just-add-water-awesomeness.</p>
 
 <h2>
 <a id="basic-usage" class="anchor" href="#basic-usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Basic Usage</h2>
@@ -120,7 +120,12 @@ $ npm install</pre></div>
 
 <p>Next, run <code>grunt build</code> to compile your custom build. For example, if you want only some of the the classes, simply comment out the class declerations in /sassy-animate/src/_classes.scss</p>
 
-<div class="highlight highlight-source-scss"><pre><span class="pl-c">// .bounceInDown, .bounce-in-down { @include bounce-in-down(); }</span></pre></div>
+<div class="highlight highlight-source-scss"><pre><span class="pl-e">.bounceInDown</span>, <span class="pl-e">.bounce-in-down</span> { <span class="pl-k">@include</span> <span class="pl-c1">bounce-in-down</span>(); }
+<span class="pl-c">// .bounceInLeft, .bounce-in-left { @include bounce-in-left(); }</span>
+<span class="pl-c">// .bounceInRight, .bounce-in-right { @include bounce-in-right(); }</span>
+<span class="pl-e">.bounceInUp</span>, <span class="pl-e">.bounce-in-up</span> { <span class="pl-k">@include</span> <span class="pl-c1">bounce-in-up</span>(); }
+<span class="pl-c">// .bounceIn, .bounce-in { @include bounce-in(); }</span>
+[...]</pre></div>
 
 <h2>
 <a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
