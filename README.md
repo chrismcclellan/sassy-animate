@@ -16,8 +16,9 @@
 
 3. Finally you need to add one of the following classes:
 
-  [List of slugi-fied classes!](blob/master/class-list-slugified.txt)
-  [List of camelCased classes!](blob/master/class-list-camelCased.txt)
+  [List of slugi-fied classes!](https://github.com/chrismcclellan/sassy-animate/blob/master/class-list-slugified.txt)
+
+  [List of camelCased classes!](https://github.com/chrismcclellan/sassy-animate/blob/master/class-list-camelCased.txt)
 
 Full example:
 ```html
