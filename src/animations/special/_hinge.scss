@@ -3,7 +3,7 @@
 
     $name: 'hinge';
     $duration-hinge: 2s !default;
-    $config: extend("$#{$name}-config", $config);
+    $config: extend( map-get($default-configs, $name), $config);
 
     @each $vendor in $supported-vendor-prefixes {
 

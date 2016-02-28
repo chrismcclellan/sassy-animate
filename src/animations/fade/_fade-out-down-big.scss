@@ -2,7 +2,7 @@
 @mixin fade-out-down-big($duration:$duration-default, $delay:null, $infinite:null, $forwards:null, $config:()) {
 
     $name: 'fade-out-down-big';
-    $config: extend("$#{$name}-config", $config);
+    $config: extend( map-get($default-configs, $name), $config);
 
     @each $vendor in $supported-vendor-prefixes {
 

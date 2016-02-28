@@ -3,7 +3,7 @@
 
     $name: 'flip-out-y';
     $duration-flip-out-y: .75s !default;
-    $config: extend("$#{$name}-config", $config);
+    $config: extend( map-get($default-configs, $name), $config);
 
     @each $vendor in $supported-vendor-prefixes {
 

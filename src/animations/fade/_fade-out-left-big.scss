@@ -1,8 +1,8 @@
 
 @mixin fade-out-left-big($duration:$duration-default, $delay:null, $infinite:null, $forwards:null, $config:()) {
 
-    $name: 'fade-out-left-big ';
-    $config: extend("$#{$name}-config", $config);
+    $name: 'fade-out-left-big';
+    $config: extend( map-get($default-configs, $name), $config);
 
     @each $vendor in $supported-vendor-prefixes {
 

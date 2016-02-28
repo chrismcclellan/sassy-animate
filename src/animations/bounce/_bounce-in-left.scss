@@ -2,7 +2,7 @@
 @mixin bounce-in-left($duration:$duration-bounce-in, $delay:null, $infinite:null, $forwards:null, $config:()) {
 
     $name: 'bounce-in-left';
-    $config: extend("$#{$name}-config", $config);
+    $config: extend( map-get($default-configs, $name), $config);
 
     @each $vendor in $supported-vendor-prefixes {
 

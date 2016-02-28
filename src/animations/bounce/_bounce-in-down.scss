@@ -2,7 +2,7 @@
 @mixin bounce-in-down($duration:$duration-bounce-in, $delay:null, $infinite:null, $forwards:null, $config:()) {
 
     $name: 'bounce-in-down';
-    $config: extend("$#{$name}-config", $config);
+    $configs: extend( map-get($default-configs, 'bounce-in-down'), $config);
 
     @each $vendor in $supported-vendor-prefixes {
 

@@ -54,6 +54,7 @@
 
 .lightSpeedIn, .light-speed-in { @include light-speed-in(); }
 .lightSpeedOut, .light-speed-out { @include light-speed-out(); }
+
 .rotateInDownLeft, .rotate-in-down-left { @include rotate-in-down-left(); }
 .rotateInDownRight, .rotate-in-down-right { @include rotate-in-down-right(); }
 .rotateInUpLeft, .rotate-in-up-left { @include rotate-in-up-left(); }
