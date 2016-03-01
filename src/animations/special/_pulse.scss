@@ -1,9 +1,11 @@
 // @mixin pulse - originally authored by Nick Pettit - https://github.com/nickpettit/ */
 
-@mixin pulse($duration:$duration-default, $delay:null, $infinite:null, $forwards:null, $config:()) {
+@mixin pulse($duration:null, $delay:null, $infinite:null, $forwards:null, $config:()) {
 
     $name: 'pulse';
     $config: extend( map-get($default-configs, $name), $config);
+
+    @include animate-or-infinite($duration, $delay, $infinite, $forwards);
 
     @each $vendor in $supported-vendor-prefixes {
 

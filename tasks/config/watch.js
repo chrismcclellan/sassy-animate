@@ -10,7 +10,7 @@ module.exports = function(grunt) {
         scss: {
             options: { preserve_path: true },
             files: ['src/**/*'],
-            tasks: ['compass:dist', 'cssmin:dist']
+            tasks: ['sass:dist', 'cssmin:dist']
         }
     });
 

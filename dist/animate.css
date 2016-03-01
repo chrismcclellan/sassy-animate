@@ -1,14 +1,3 @@
-/*
- *
- *  Helper classes / selectors
- *
- *  Syntax
- *  @include mixin($rule, $definition, $prefix);
- *
- *  Example
- *  @include prefix(transform, scaleY(10%), webkit);
- *
- */
 .animate,
 .animated {
   -webkit-animation-fill-mode: both;
@@ -2025,11 +2014,11 @@
   }
 }
 .flipInX, .flip-in-x {
-  -webkit-animation: flip-in-x 1s ;
-  -moz-animation: flip-in-x 1s ;
-  -ms-animation: flip-in-x 1s ;
-  -o-animation: flip-in-x 1s ;
-  animation: flip-in-x 1s ;
+  -webkit-animation: flip-in-x 0.75s ;
+  -moz-animation: flip-in-x 0.75s ;
+  -ms-animation: flip-in-x 0.75s ;
+  -o-animation: flip-in-x 0.75s ;
+  animation: flip-in-x 0.75s ;
   -webkit-backface-visibility: visible !important;
   -moz-backface-visibility: visible !important;
   -ms-backface-visibility: visible !important;
@@ -2142,11 +2131,11 @@
   }
 }
 .flipInY, .flip-in-y {
-  -webkit-animation: flip-in-y 1s ;
-  -moz-animation: flip-in-y 1s ;
-  -ms-animation: flip-in-y 1s ;
-  -o-animation: flip-in-y 1s ;
-  animation: flip-in-y 1s ;
+  -webkit-animation: flip-in-y 0.75s ;
+  -moz-animation: flip-in-y 0.75s ;
+  -ms-animation: flip-in-y 0.75s ;
+  -o-animation: flip-in-y 0.75s ;
+  animation: flip-in-y 0.75s ;
   -webkit-backface-visibility: visible !important;
   -moz-backface-visibility: visible !important;
   -ms-backface-visibility: visible !important;
@@ -2259,11 +2248,11 @@
   }
 }
 .flipOutX, .flip-out-x {
-  -webkit-animation: flip-out-x 1s ;
-  -moz-animation: flip-out-x 1s ;
-  -ms-animation: flip-out-x 1s ;
-  -o-animation: flip-out-x 1s ;
-  animation: flip-out-x 1s ;
+  -webkit-animation: flip-out-x 0.75s ;
+  -moz-animation: flip-out-x 0.75s ;
+  -ms-animation: flip-out-x 0.75s ;
+  -o-animation: flip-out-x 0.75s ;
+  animation: flip-out-x 0.75s ;
   -webkit-backface-visibility: visible !important;
   -moz-backface-visibility: visible !important;
   -ms-backface-visibility: visible !important;
@@ -2336,11 +2325,11 @@
   }
 }
 .flipOutY, .flip-out-y {
-  -webkit-animation: flip-out-y 1s ;
-  -moz-animation: flip-out-y 1s ;
-  -ms-animation: flip-out-y 1s ;
-  -o-animation: flip-out-y 1s ;
-  animation: flip-out-y 1s ;
+  -webkit-animation: flip-out-y 0.75s ;
+  -moz-animation: flip-out-y 0.75s ;
+  -ms-animation: flip-out-y 0.75s ;
+  -o-animation: flip-out-y 0.75s ;
+  animation: flip-out-y 0.75s ;
   -webkit-backface-visibility: visible !important;
   -moz-backface-visibility: visible !important;
   -ms-backface-visibility: visible !important;
@@ -3914,11 +3903,11 @@
   }
 }
 .hinge {
-  -webkit-animation: hinge 1s ;
-  -moz-animation: hinge 1s ;
-  -ms-animation: hinge 1s ;
-  -o-animation: hinge 1s ;
-  animation: hinge 1s ;
+  -webkit-animation: hinge 2s ;
+  -moz-animation: hinge 2s ;
+  -ms-animation: hinge 2s ;
+  -o-animation: hinge 2s ;
+  animation: hinge 2s ;
 }
 @-webkit-keyframes hinge {
   0% {

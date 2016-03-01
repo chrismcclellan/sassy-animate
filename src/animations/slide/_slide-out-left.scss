@@ -1,8 +1,10 @@
 
-@mixin slide-out-left($duration:$duration-default, $delay:null, $infinite:null, $forwards:null, $config:()) {
+@mixin slide-out-left($duration:null, $delay:null, $infinite:null, $forwards:null, $config:()) {
 
     $name: 'slide-out-left';
     $config: extend( map-get($default-configs, $name), $config);
+
+    @include animate-or-infinite($duration, $delay, $infinite, $forwards);
 
     @each $vendor in $supported-vendor-prefixes {
 

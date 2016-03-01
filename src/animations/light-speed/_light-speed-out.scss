@@ -1,8 +1,10 @@
 
-@mixin light-speed-out($duration:$duration-default, $delay:null, $infinite:null, $forwards:null, $config:()) {
+@mixin light-speed-out($duration:null, $delay:null, $infinite:null, $forwards:null, $config:()) {
 
     $name: 'light-speed-out';
     $config: extend( map-get($default-configs, $name), $config);
+
+    @include animate-or-infinite($duration, $delay, $infinite, $forwards);
 
     @each $vendor in $supported-vendor-prefixes {
 

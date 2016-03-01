@@ -5,7 +5,7 @@
 module.exports = function (grunt) {
 
 	grunt.registerTask('build', [
-		'compass:dist',
+		'sass:dist',
         'cssmin:dist'
 	]);
 };

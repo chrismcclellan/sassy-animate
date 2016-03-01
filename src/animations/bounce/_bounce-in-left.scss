@@ -1,8 +1,10 @@
 
-@mixin bounce-in-left($duration:$duration-bounce-in, $delay:null, $infinite:null, $forwards:null, $config:()) {
+@mixin bounce-in-left($duration:null, $delay:null, $infinite:null, $forwards:null, $config:()) {
 
     $name: 'bounce-in-left';
-    $config: extend( map-get($default-configs, $name), $config);
+    $configs: extend( map-get($default-configs, $name), $config);
+
+    @include animate-or-infinite($duration, $delay, $infinite, $forwards);
 
     @each $vendor in $supported-vendor-prefixes {
 
@@ -20,6 +22,10 @@
 
             100% { @include prefix(transform, none, $vendor); }
         }
+    }
+
+    @if not $duration {
+        $duration: $duration-bounce-in;
     }
 
     @include animation($name, $duration, $delay, $infinite, $forwards);

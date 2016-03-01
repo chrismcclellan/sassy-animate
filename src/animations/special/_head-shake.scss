@@ -1,8 +1,10 @@
 
-@mixin head-shake($duration:$duration-default, $delay:null, $infinite:null, $forwards:null, $config:()) {
+@mixin head-shake($duration:null, $delay:null, $infinite:null, $forwards:null, $config:()) {
 
     $name: 'head-shake';
     $config: extend( map-get($default-configs, $name), $config);
+
+    @include animate-or-infinite($duration, $delay, $infinite, $forwards);
 
     @each $vendor in $supported-vendor-prefixes {
 

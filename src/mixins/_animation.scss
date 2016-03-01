@@ -5,19 +5,20 @@
 
     @for $i from 1 through $max {
 
-        // @debug nth($animate, $i);
-
         @if nth($animate, $i) {
 
             $animations: #{$animations + nth($animate, $i)};
 
             @if $i < $max {
-
                 $animations: #{$animations + " "};
             }
+
+        } @else if ($i == 2) and (not nth($animate, 2)) {
+
+            // duration isn't set - grab the default
+            $animations: #{$animations + $duration-default + " "};
         }
     }
 
-   // @include prefix(animation-fill-mode, both, '*');
     @include prefix(animation, $animations, '*');
 }

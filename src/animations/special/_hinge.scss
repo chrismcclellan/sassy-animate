@@ -1,9 +1,10 @@
 
-@mixin hinge($duration:$duration-default, $delay:null, $infinite:null, $forwards:null, $config:()) {
+@mixin hinge($duration:null, $delay:null, $infinite:null, $forwards:null, $config:()) {
 
     $name: 'hinge';
-    $duration-hinge: 2s !default;
     $config: extend( map-get($default-configs, $name), $config);
+
+    @include animate-or-infinite($duration, $delay, $infinite, $forwards);
 
     @each $vendor in $supported-vendor-prefixes {
 
@@ -17,7 +18,7 @@
             20%, 60% {
                 @include prefix(transform, rotate3d(0, 0, 1, 80deg), $vendor);
                 @include prefix(transform-origin, top left, $vendor);
-                @include prefix( animation-timing-function, ease-in-out, $vendor);
+                @include prefix(animation-timing-function, ease-in-out, $vendor);
             }
 
             40%, 80% { opacity: 1;
@@ -30,6 +31,10 @@
                 @include prefix(transform, translate3d(0, 700px, 0), $vendor);
             }
         }
+    }
+
+    @if not $duration {
+        $duration: $duration-hinge;
     }
 
     @include animation($name, $duration, $delay, $infinite, $forwards);

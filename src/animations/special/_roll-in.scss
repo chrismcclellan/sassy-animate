@@ -1,9 +1,11 @@
 // @mixin - roll-in - originally authored by Nick Pettit - https://github.com/nickpettit/glide */
 
-@mixin roll-in($duration:$duration-default, $delay:null, $infinite:null, $forwards:null, $config:()) {
+@mixin roll-in($duration:null, $delay:null, $infinite:null, $forwards:null, $config:()) {
 
     $name: 'roll-in';
     $config: extend( map-get($default-configs, $name), $config);
+
+    @include animate-or-infinite($duration, $delay, $infinite, $forwards);
 
     @each $vendor in $supported-vendor-prefixes {
 

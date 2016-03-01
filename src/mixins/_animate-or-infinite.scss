@@ -1,0 +1,14 @@
+
+@mixin animate-or-infinite($duration:null, $delay:null, $infinite:null, $forwards:null) {
+
+    // Check to see if any params were passed
+    // which would indicate a custom call to the mixin
+
+    @if $duration or $delay or $infinite or $forwards {
+        @include animate();
+    }
+
+    @if $infinite {
+        @include infinite();
+    }
+}

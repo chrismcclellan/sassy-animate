@@ -1,9 +1,11 @@
 
-@mixin flip-out-y($duration:$duration-default, $delay:null, $infinite:null, $forwards:null, $config:()) {
+@mixin flip-out-y($duration:null, $delay:null, $infinite:null, $forwards:null, $config:()) {
 
     $name: 'flip-out-y';
     $duration-flip-out-y: .75s !default;
     $config: extend( map-get($default-configs, $name), $config);
+
+    @include animate-or-infinite($duration, $delay, $infinite, $forwards);
 
     @each $vendor in $supported-vendor-prefixes {
 
@@ -15,6 +17,10 @@
 
             100% { @include prefix(transform, perspective(400px) rotate3d(0, 1, 0, 90deg), $vendor); opacity: 0; }
         }
+    }
+
+    @if not $duration {
+        $duration: $duration-flip-out;
     }
 
     @include animation($name, $duration, $delay, $infinite, $forwards);
