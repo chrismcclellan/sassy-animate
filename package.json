@@ -1,11 +1,16 @@
 {
   "name": "sassy-animate",
   "version": "0.0.1",
-  "description": "A SCSS port of animate.css. Yay mixins!",
-  "main": "index.js",
+  "description": "A SCSS port of animate.css. Yay customizability!",
   "scripts": {
-    "test": "node -w app.js"
+    "start": "grunt",
+    "build": "grunt build"
   },
+  "files": [
+    "backbone.js",
+    "backbone-min.js",
+    "backbone-min.map"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/chrismcclellan/sassy-animate.git"
@@ -23,5 +28,8 @@
     "grunt-contrib-watch": "^0.6.1",
     "include-all": "^0.1.6",
     "lodash": "^4.5.1"
+  },
+  "engines": {
+    "node": ">=0.10.0"
   }
 }
