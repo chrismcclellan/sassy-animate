@@ -12,13 +12,13 @@
 
             0%, 60%, 75%, 90%, 100% { @include prefix(animation-timing-function, cubic-bezier(0.215, 0.610, 0.355, 1.000), $vendor); }
 
-            0%   { @include prefix(transform, translate3d( map-get($config,'1'), 0, 0), $vendor); opacity: 0; }
+            0%   { @include prefix(transform, translate3d( -3000px, 0, 0), $vendor); opacity: 0; }
 
-            60%  { @include prefix(transform, translate3d( map-get($config,'2'), 0, 0), $vendor); opacity: 1; }
+            60%  { @include prefix(transform, translate3d( 25px, 0, 0), $vendor); opacity: 1; }
 
-            75%  { @include prefix(transform, translate3d( map-get($config,'3'), 0, 0), $vendor); }
+            75%  { @include prefix(transform, translate3d( -10px, 0, 0), $vendor); }
 
-            90%  { @include prefix(transform, translate3d( map-get($config,'4'), 0, 0), $vendor); }
+            90%  { @include prefix(transform, translate3d( 5px, 0, 0), $vendor); }
 
             100% { @include prefix(transform, none, $vendor); }
         }
