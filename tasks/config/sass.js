@@ -13,7 +13,7 @@ module.exports = function(grunt) {
         },
         dist: {
             files: {
-                'dist/animate.css': 'src/animate.scss'
+                'dist/animate.css': 'scss/animate.scss'
             }
         }
     });
