@@ -16,9 +16,7 @@
 
 3. Finally you need to add one of the following classes:
 
-  [slugified classes!](https://github.com/chrismcclellan/sassy-animate/blob/master/.bin/cslugified.txt)
-
-  [camelCased classes!](https://github.com/chrismcclellan/sassy-animate/blob/master/.bin/ccamelCased.txt)
+  [classes!](https://github.com/chrismcclellan/sassy-animate/blob/master/classes.config.json)
 
 Full example:
 ```html
