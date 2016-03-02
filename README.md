@@ -91,7 +91,17 @@ You can change the duration of your animations, add a delay or change the number
 }
 ```
 
-## Custom Builds
+## Roadmap
+
+- [ ] Allow for config to be set in project root to allow for custom builds.
+
+- [ ] Better default configs with override options in root config.
+
+- [ ] Dryer mixins (timing functions can be moved out)
+
+- [ ] Support as Grunt task
+
+<!-- ## Custom Builds
 Animate.scss is powered by [grunt.js](http://gruntjs.com/), and you can create custom builds pretty easily. First of all, you’ll need Grunt and all other dependencies:
 
 ```sh
@@ -105,7 +115,7 @@ Next, run `grunt build` to compile your custom build. For example, if you want o
 ```scss
 .bounceInDown, .bounce-in-down { @include bounce-in-down(); }
 // .bounceInLeft, .bounce-in-left { @include bounce-in-left(); }
-```
+``` -->
 
 ## License
 Animate.scss is licensed under the MIT license. (http://opensource.org/licenses/MIT)
