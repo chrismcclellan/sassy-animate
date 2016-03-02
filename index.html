@@ -51,9 +51,9 @@ You may also want to include the class <code>infinite</code> for an infinite loo
 <li>
 <p>Finally you need to add one of the following classes:</p>
 
-<p><a href="https://github.com/chrismcclellan/sassy-animate/blob/master/class-list-slugified.txt">List of slugi-fied classes!</a></p>
+<p><a href="https://github.com/chrismcclellan/sassy-animate/blob/master/.bin/cslugified.txt">slugified classes!</a></p>
 
-<p><a href="https://github.com/chrismcclellan/sassy-animate/blob/master/class-list-camelCased.txt">List of camelCased classes!</a></p>
+<p><a href="https://github.com/chrismcclellan/sassy-animate/blob/master/.bin/ccamelCased.txt">camelCased classes!</a></p>
 </li>
 </ol>
 
@@ -61,7 +61,7 @@ You may also want to include the class <code>infinite</code> for an infinite loo
 
 <div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">h1</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>animated infinite bounce<span class="pl-pds">"</span></span>&gt;Example&lt;/<span class="pl-ent">h1</span>&gt;</pre></div>
 
-<p><a href="https://daneden.github.io/animate.scss/">Check out all the animations here!</a></p>
+<p><a href="https://daneden.github.io/animate.css/">Check out all the animations here!</a></p>
 
 <h2>
 <a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
@@ -76,11 +76,18 @@ You may also want to include the class <code>infinite</code> for an infinite loo
 
 <div class="highlight highlight-source-js"><pre><span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">'</span>#yourElement<span class="pl-pds">'</span></span>).<span class="pl-en">addClass</span>(<span class="pl-s"><span class="pl-pds">'</span>animate bounce-out-left<span class="pl-pds">'</span></span>);</pre></div>
 
-<p>You can also detect when an animation ends:</p>
+<pre><code>
+You can also detect when an animation ends:
 
+&lt;!--
+Before you make changes to this file, you should know that $('#yourElement').one() is *NOT A TYPO*
 
+http://api.jquery.com/one/
+--&gt;
 
-<div class="highlight highlight-source-js"><pre><span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">'</span>#yourElement<span class="pl-pds">'</span></span>).<span class="pl-en">one</span>(<span class="pl-s"><span class="pl-pds">'</span>webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend<span class="pl-pds">'</span></span>, doSomething);</pre></div>
+```javascript
+$('#yourElement').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', doSomething);
+</code></pre>
 
 <p><a href="https://www.youtube.com/watch?v=CBQGl6zokMs">View a video tutorial</a> on how to use Animate.scss with jQuery here.</p>
 
@@ -101,13 +108,21 @@ You may also want to include the class <code>infinite</code> for an infinite loo
 
 <div class="highlight highlight-source-js"><pre><span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">'</span>#yourElement<span class="pl-pds">'</span></span>).<span class="pl-en">animateCss</span>(<span class="pl-s"><span class="pl-pds">'</span>bounce<span class="pl-pds">'</span></span>);</pre></div>
 
+<h2>
+<a id="using-mixins" class="anchor" href="#using-mixins" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Using Mixins</h2>
+
 <p>You can change the duration of your animations, add a delay or change the number of times that it plays:</p>
 
-<div class="highlight highlight-source-css"><pre><span class="pl-e">#yourElement</span> {
-  @<span class="pl-c1">include</span> <span class="pl-c1">bounce-in-<span class="pl-c1">down</span></span>($<span class="pl-c1"><span class="pl-c1">duration</span></span>:<span class="pl-c1">3<span class="pl-k">s</span></span>, $delay:<span class="pl-c1">2<span class="pl-k">s</span></span>, $infinite: true, <span class="pl-s"><span class="pl-pds">'</span>*<span class="pl-pds">'</span></span>);
-}</pre></div>
+<ul>
+<li>$duration: accepts #.#s or ###ms format</li>
+<li>$delay: accepts #.#s or ###ms format</li>
+<li>$infinite: accepts Boolean</li>
+<li>$vendor-prefix: accepts 'webkit', 'moz', 'ms', 'o', null, '*' (the * returns all vender prefixed rules)</li>
+</ul>
 
-<p><em>Note: be sure to replace "vendor" in the CSS with the applicable vendor prefixes (webkit, moz, etc)</em></p>
+<div class="highlight highlight-source-scss"><pre><span class="pl-e">#yourElement</span> {
+   <span class="pl-k">@include</span> <span class="pl-c1">fade-in-down</span>(<span class="pl-c1">300</span><span class="pl-k">ms</span>,<span class="pl-c1"> 2</span><span class="pl-k">s</span>, <span class="pl-c1">true</span>, <span class="pl-s"><span class="pl-pds">'</span>webkit<span class="pl-pds">'</span></span>);
+}</pre></div>
 
 <h2>
 <a id="custom-builds" class="anchor" href="#custom-builds" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Custom Builds</h2>
@@ -121,11 +136,7 @@ $ npm install</pre></div>
 <p>Next, run <code>grunt build</code> to compile your custom build. For example, if you want only some of the the classes, simply comment out the class declerations in /sassy-animate/src/_classes.scss</p>
 
 <div class="highlight highlight-source-scss"><pre><span class="pl-e">.bounceInDown</span>, <span class="pl-e">.bounce-in-down</span> { <span class="pl-k">@include</span> <span class="pl-c1">bounce-in-down</span>(); }
-<span class="pl-c">// .bounceInLeft, .bounce-in-left { @include bounce-in-left(); }</span>
-<span class="pl-c">// .bounceInRight, .bounce-in-right { @include bounce-in-right(); }</span>
-<span class="pl-e">.bounceInUp</span>, <span class="pl-e">.bounce-in-up</span> { <span class="pl-k">@include</span> <span class="pl-c1">bounce-in-up</span>(); }
-<span class="pl-c">// .bounceIn, .bounce-in { @include bounce-in(); }</span>
-[...]</pre></div>
+<span class="pl-c">// .bounceInLeft, .bounce-in-left { @include bounce-in-left(); }</span></pre></div>
 
 <h2>
 <a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
