@@ -123,18 +123,16 @@ $('#yourElement').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimat
 }</pre></div>
 
 <h2>
-<a id="custom-builds" class="anchor" href="#custom-builds" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Custom Builds</h2>
+<a id="roadmap" class="anchor" href="#roadmap" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Roadmap</h2>
 
-<p>Animate.scss is powered by <a href="http://gruntjs.com/">grunt.js</a>, and you can create custom builds pretty easily. First of all, you’ll need Grunt and all other dependencies:</p>
+<ul>
+<li><p>[ ] Allow for config to be set in project root to allow for custom builds.</p></li>
+<li><p>[ ] Better default configs with override options in root config.</p></li>
+<li><p>[ ] Dryer mixins (timing functions can be moved out)</p></li>
+<li><p>[ ] Support as Grunt task</p></li>
+</ul>
 
-<div class="highlight highlight-source-shell"><pre>$ git clone git@github.com:chrismcclellan/sassy-animate.git
-$ <span class="pl-c1">cd</span> sassy-animate
-$ npm install</pre></div>
 
-<p>Next, run <code>grunt build</code> to compile your custom build. For example, if you want only some of the the classes, simply comment out the class declerations in /sassy-animate/src/_classes.scss</p>
-
-<div class="highlight highlight-source-scss"><pre><span class="pl-e">.bounceInDown</span>, <span class="pl-e">.bounce-in-down</span> { <span class="pl-k">@include</span> <span class="pl-c1">bounce-in-down</span>(); }
-<span class="pl-c">// .bounceInLeft, .bounce-in-left { @include bounce-in-left(); }</span></pre></div>
 
 <h2>
 <a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
