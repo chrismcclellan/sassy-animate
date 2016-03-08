@@ -1,0 +1,98 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'publish' ]
+2 info using npm@2.14.12
+3 info using node@v4.3.0
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec Result {
+7 silly cache add   raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: '/Users/chris_mcclellan/Code/personal/sassy-animate',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory /Users/chris_mcclellan/.npm/sassy-animate/1.0.2/package.tgz not in flight; packing
+9 verbose tar pack [ '/Users/chris_mcclellan/.npm/sassy-animate/1.0.2/package.tgz',
+9 verbose tar pack   '/Users/chris_mcclellan/Code/personal/sassy-animate' ]
+10 verbose tarball /Users/chris_mcclellan/.npm/sassy-animate/1.0.2/package.tgz
+11 verbose folder /Users/chris_mcclellan/Code/personal/sassy-animate
+12 info prepublish sassy-animate@1.0.2
+13 verbose addLocalTarball adding from inside cache /Users/chris_mcclellan/.npm/sassy-animate/1.0.2/package.tgz
+14 silly cache afterAdd sassy-animate@1.0.2
+15 verbose afterAdd /Users/chris_mcclellan/.npm/sassy-animate/1.0.2/package/package.json not in flight; writing
+16 verbose afterAdd /Users/chris_mcclellan/.npm/sassy-animate/1.0.2/package/package.json written
+17 silly publish { name: 'sassy-animate',
+17 silly publish   version: '1.0.2',
+17 silly publish   description: 'A SCSS port of animate.css. Yay customizability!',
+17 silly publish   scripts: { start: 'grunt', build: 'grunt build' },
+17 silly publish   repository:
+17 silly publish    { type: 'git',
+17 silly publish      url: 'git+https://github.com/chrismcclellan/sassy-animate.git' },
+17 silly publish   author: { name: 'Christopher McClellan' },
+17 silly publish   license: 'MIT',
+17 silly publish   bugs: { url: 'https://github.com/chrismcclellan/sassy-animate/issues' },
+17 silly publish   homepage: 'https://github.com/chrismcclellan/sassy-animate#readme',
+17 silly publish   dependencies: { 'include-all': '^0.1.6', lodash: '^4.5.1' },
+17 silly publish   devDependencies:
+17 silly publish    { 'grunt-contrib-sass': '^0.9.2',
+17 silly publish      'grunt-contrib-cssmin': '^0.14.0',
+17 silly publish      'grunt-contrib-watch': '^0.6.1' },
+17 silly publish   directories: [ 'dist' ],
+17 silly publish   engines: { node: '>=0.10.0' },
+17 silly publish   readme: '#SassyAnimate\n*Just-add-water CSS animation*\n\n`animate.scss` is a bunch of cool, fun, and cross-browser animations for you to use in your projects. Great for emphasis, home pages, sliders, and general just-add-water-awesomeness.\n\n##Basic Usage\n1. Include the stylesheet on your document\'s `<head>`\n\n  ```html\n  <head>\n    <link rel="stylesheet" href="/animate.min.css">\n  </head>\n  ```\n2. Add the class `animated` to the element you want to animate.\n You may also want to include the class `infinite` for an infinite loop.\n\n3. Finally you need to add one of the following classes:\n\n  [classes!](https://github.com/chrismcclellan/sassy-animate/blob/master/classes.config.json)\n\nFull example:\n```html\n<h1 class="animated infinite bounce">Example</h1>\n```\n\n[Check out all the animations here!](https://daneden.github.io/animate.css/)\n\n##Usage\nTo use animate.scss in your website, simply drop the stylesheet into your document\'s `<head>`, and add the class `animated` to an element, along with any of the animation names. That\'s it! You\'ve got a CSS animated element. Super!\n\n```html\n<head>\n  <link rel="stylesheet" href="animate.min.css">\n</head>\n```\n\nYou can do a whole bunch of other stuff with animate.scss when you combine it with jQuery or add your own CSS rules. Dynamically add animations using jQuery with ease:\n\n```javascript\n$(\'#yourElement\').addClass(\'animate bounce-out-left\');\n```\n```\n\nYou can also detect when an animation ends:\n\n<!--\nBefore you make changes to this file, you should know that $(\'#yourElement\').one() is *NOT A TYPO*\n\nhttp://api.jquery.com/one/\n-->\n\n```javascript\n$(\'#yourElement\').one(\'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend\', doSomething);\n```\n\n[View a video tutorial](https://www.youtube.com/watch?v=CBQGl6zokMs) on how to use Animate.scss with jQuery here.\n\n**Note:** `jQuery.one()` is used when you want to execute the event handler at most *once*. More information [here](http://api.jquery.com/one/).\n\nYou can also extend jQuery to add a function that does it all for you:\n\n```javascript\n$.fn.extend({\n    animateCss: function (animationName) {\n        var animationEnd = \'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend\';\n        $(this).addClass(\'animated \' + animationName).one(animationEnd, function() {\n            $(this).removeClass(\'animated \' + animationName);\n        });\n    }\n});\n```\n\nAnd use it like this:\n\n```javascript\n$(\'#yourElement\').animateCss(\'bounce\');\n```\n\n## Using Mixins\n\nYou can change the duration of your animations, add a delay or change the number of times that it plays:\n\n + $duration: accepts #.#s or ###ms format\n + $delay: accepts #.#s or ###ms format\n + $infinite: accepts Boolean\n + $vendor-prefix: accepts \'webkit\', \'moz\', \'ms\', \'o\', null, \'*\' (the * returns all vender prefixed rules)\n\n```scss\n#yourElement {\n   @include fade-in-down(300ms, 2s, true, \'webkit\');\n}\n```\n\n## Roadmap\n\n- [ ] Allow for config to be set in project root to allow for custom builds.\n\n- [ ] Better default configs with override options in root config.\n\n- [ ] Dryer mixins (timing functions can be moved out)\n\n- [ ] Support as Grunt task\n\n<!-- ## Custom Builds\nAnimate.scss is powered by [grunt.js](http://gruntjs.com/), and you can create custom builds pretty easily. First of all, you’ll need Grunt and all other dependencies:\n\n```sh\n$ git clone git@github.com:chrismcclellan/sassy-animate.git\n$ cd sassy-animate\n$ npm install\n```\n\nNext, run `grunt build` to compile your custom build. For example, if you want only some of the the classes, simply comment out the class declerations in /sassy-animate/src/_classes.scss\n\n```scss\n.bounceInDown, .bounce-in-down { @include bounce-in-down(); }\n// .bounceInLeft, .bounce-in-left { @include bounce-in-left(); }\n``` -->\n\n## License\nAnimate.scss is licensed under the MIT license. (http://opensource.org/licenses/MIT)\n',
+17 silly publish   readmeFilename: 'README.md',
+17 silly publish   gitHead: '8dbffe78aec9a3f9aeb5e7cd15b9c8e06282c220',
+17 silly publish   _id: 'sassy-animate@1.0.2',
+17 silly publish   _shasum: '5bcf3ca640050e81672fd04defbdc61b76110d1e',
+17 silly publish   _from: '.' }
+18 verbose getPublishConfig undefined
+19 silly mapToRegistry name sassy-animate
+20 silly mapToRegistry using default registry
+21 silly mapToRegistry registry https://registry.npmjs.org/
+22 silly mapToRegistry uri https://registry.npmjs.org/sassy-animate
+23 verbose publish registryBase https://registry.npmjs.org/
+24 silly publish uploading /Users/chris_mcclellan/.npm/sassy-animate/1.0.2/package.tgz
+25 verbose request uri https://registry.npmjs.org/sassy-animate
+26 verbose request sending authorization for write operation
+27 info attempt registry request try #1 at 1:45:31 AM
+28 verbose request using bearer token for auth
+29 verbose request id 13ca3927979b87ab
+30 http request PUT https://registry.npmjs.org/sassy-animate
+31 http 403 https://registry.npmjs.org/sassy-animate
+32 verbose headers { 'content-type': 'application/json',
+32 verbose headers   'cache-control': 'max-age=300',
+32 verbose headers   'content-length': '95',
+32 verbose headers   'accept-ranges': 'bytes',
+32 verbose headers   date: 'Tue, 08 Mar 2016 06:45:33 GMT',
+32 verbose headers   via: '1.1 varnish',
+32 verbose headers   connection: 'keep-alive',
+32 verbose headers   'x-served-by': 'cache-jfk1022-JFK',
+32 verbose headers   'x-cache': 'MISS',
+32 verbose headers   'x-cache-hits': '0',
+32 verbose headers   'x-timer': 'S1457419532.282505,VS0,VE862' }
+33 verbose request invalidating /Users/chris_mcclellan/.npm/registry.npmjs.org/sassy-animate on PUT
+34 error publish Failed PUT 403
+35 verbose stack Error: "You cannot publish over the previously published version 1.0.2." : sassy-animate
+35 verbose stack     at makeError (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:264:12)
+35 verbose stack     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:252:14)
+35 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:172:14)
+35 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:198:22)
+35 verbose stack     at emitTwo (events.js:87:13)
+35 verbose stack     at Request.emit (events.js:172:7)
+35 verbose stack     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1082:10)
+35 verbose stack     at emitOne (events.js:82:20)
+35 verbose stack     at Request.emit (events.js:169:7)
+35 verbose stack     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1009:12)
+36 verbose statusCode 403
+37 verbose pkgid sassy-animate
+38 verbose cwd /Users/chris_mcclellan/Code/personal/sassy-animate
+39 error Darwin 15.3.0
+40 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "publish"
+41 error node v4.3.0
+42 error npm  v2.14.12
+43 error code E403
+44 error "You cannot publish over the previously published version 1.0.2." : sassy-animate
+45 error If you need help, you may report this error at:
+45 error     <https://github.com/npm/npm/issues>
+46 verbose exit [ 1, true ]
