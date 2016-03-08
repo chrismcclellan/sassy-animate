@@ -1,6 +1,6 @@
 {
   "name": "sassy-animate",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A SCSS port of animate.css. Yay customizability!",
   "scripts": {
     "start": "grunt",
